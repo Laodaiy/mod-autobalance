@@ -6795,11 +6795,11 @@ public:
 
             return true;
         }
-        else
-        {
-            handler->PSendSysMessage(ABGetLocaleText(locale, "ab_command_only_in_instance").c_str());
-            return false;
-        }
+        //else
+        //{
+        //    handler->PSendSysMessage(ABGetLocaleText(locale, "ab_command_only_in_instance").c_str());
+        //    return false;
+        //}
     }
 
     static bool HandleABCreatureStatsCommand(ChatHandler* handler, const char* /*args*/)
@@ -6814,12 +6814,12 @@ public:
             handler->SetSentErrorMessage(true);
             return false;
         }
-        else if (!target->GetMap()->IsDungeon())
-        {
-            handler->PSendSysMessage(ABGetLocaleText(locale, "target_no_in_instance").c_str());
-            handler->SetSentErrorMessage(true);
-            return false;
-        }
+        //else if (!target->GetMap()->IsDungeon())
+        //{
+        //    handler->PSendSysMessage(ABGetLocaleText(locale, "target_no_in_instance").c_str());
+        //    handler->SetSentErrorMessage(true);
+        //    return false;
+        //}
 
         AutoBalanceCreatureInfo *targetABInfo=target->CustomData.GetDefault<AutoBalanceCreatureInfo>("AutoBalanceCreatureInfo");
 
