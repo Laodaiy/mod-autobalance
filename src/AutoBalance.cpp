@@ -3604,7 +3604,7 @@ class AutoBalance_PlayerScript : public PlayerScript
         void OnLogin(Player *Player) override
         {
             if (EnableGlobal && Announcement) {
-                ChatHandler(Player->GetSession()).SendSysMessage("This server is running the |cff4CFF00AutoBalance |rmodule.");
+                ChatHandler(Player->GetSession()).SendSysMessage("服务器已启用 |cff4CFF00动态平衡 |r模块。");
             }
         }
 
