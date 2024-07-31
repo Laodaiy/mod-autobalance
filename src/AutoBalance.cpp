@@ -5122,7 +5122,7 @@ public:
                 if (mapABInfo->enabled && PlayerChangeNotify && EnableGlobal) {
                     for (MapReference const& ref : creatureMap->GetPlayers()) {
                         if (Player const* playerHandle = ref.GetSource()) {
-                            ChatHandler(playerHandle->GetSession()).PSendSysMessage("|cffFF0000 [AutoBalance+NPCBots]|r|cffFF8000 %s (bot) entered %s. Auto setting player count to %i (Player Difficulty Offset = %i) |r",
+                            ChatHandler(playerHandle->GetSession()).PSendSysMessage("|cffFF0000 [AutoBalance+NPCBots]|r|cffFF8000 {} (bot) 进入 {}. 自动将玩家人数设置为 {} (Player Difficulty Offset = {}) |r",
                                 creature->GetName().c_str(), creatureMap->GetMapName(), mapABInfo->playerCount + PlayerCountDifficultyOffset, PlayerCountDifficultyOffset);
                         }
                     }
@@ -5203,7 +5203,7 @@ public:
                     if (mapABInfo->enabled && PlayerChangeNotify && EnableGlobal) {
                         for (MapReference const& ref : map->GetPlayers()) {
                             if (Player const* playerHandle = ref.GetSource()) {
-                                ChatHandler(playerHandle->GetSession()).PSendSysMessage("|cffFF0000 [AutoBalance+NPCBots]|r|cffFF8000 %s (bot) left %s. Auto setting player count to %i (Player Difficulty Offset = %i) |r",
+                                ChatHandler(playerHandle->GetSession()).PSendSysMessage("|cffFF0000 [AutoBalance+NPCBots]|r|cffFF8000 {} (bot) 离开 {}. 自动将玩家人数设置为 {} (Player Difficulty Offset = {}) |r",
                                     creature->GetName().c_str(), map->GetMapName(), mapABInfo->playerCount + PlayerCountDifficultyOffset, PlayerCountDifficultyOffset);
                             }
                         }
@@ -6717,7 +6717,7 @@ public:
         {
             handler->PSendSysMessage("---");
             // Map basics
-            handler->PSendSysMessage("%s (%u-player %s) | ID %u-%u%s",
+            handler->PSendSysMessage("{} ({}-player {}) | ID {}-{}{}",
                                     player->GetMap()->GetMapName(),
                                     GetMapMaxPlayers(player->GetMap()),
                                     player->GetMap()->ToInstanceMap() && player->GetMap()->ToInstanceMap()->IsHeroic() ? "Heroic" : "Normal",
@@ -6729,7 +6729,7 @@ public:
             // if (!mapABInfo->enabled) { return true; }
 
             // Player stats
-            handler->PSendSysMessage("Players on map: %u (Lvl %u - %u)",
+            handler->PSendSysMessage("Players on map: {} (Lvl {} - {})",
                                     mapABInfo->playerCount,
                                     mapABInfo->lowestPlayerLevel,
                                     mapABInfo->highestPlayerLevel
@@ -6826,7 +6826,7 @@ public:
         AutoBalanceCreatureInfo *targetABInfo=target->CustomData.GetDefault<AutoBalanceCreatureInfo>("AutoBalanceCreatureInfo");
 
         handler->PSendSysMessage("---");
-        handler->PSendSysMessage("%s (%u%s%s), %s",
+        handler->PSendSysMessage("{} ({}{}{}), {}",
                                   target->GetName(),
                                   targetABInfo->UnmodifiedLevel,
                                   isCreatureRelevant(target) && targetABInfo->UnmodifiedLevel != target->GetLevel() ? "->" + std::to_string(targetABInfo->selectedLevel) : "",
