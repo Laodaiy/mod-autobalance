@@ -6,6 +6,7 @@
 #include <iostream>
 #include <vector>
 #include <sstream>
+#include <Common.h>
 
 const std::unordered_map<LocaleConstant, std::string> AB_WELCOME_TO_PLAYER = {
     {LOCALE_enUS, "|cffc3dbff [AutoBalance]|r|cffFF8000 Welcome to {} ({}-player {}). There are {} player(s) in this instance. Difficulty set to {} player(s).|r"},

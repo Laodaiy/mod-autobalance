@@ -4,6 +4,7 @@
 #include "ItemTemplate.h"
 #include <string>
 #include <unordered_map>
+#include "Common.h"
 
 std::string ABGetLocaleText(LocaleConstant locale, const std::string& titleType);
 
